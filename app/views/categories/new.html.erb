@@ -1,0 +1,11 @@
+<%= form_for :category, url: categories_path do |f| %>
+	
+	<h1> 
+		<%= f.label :Category_name %>
+		<%= f.text_field :name %>
+	</h1>
+
+	<%= link_to 'Categories', categories_path %>
+	<%= link_to 'Home', articles_path %>
+
+<% end %>

@@ -1,0 +1,7 @@
+<h1>Listing articles</h1>
+
+<%= link_to 'New article', new_article_path %>
+<%= link_to 'New category', new_category_path %>
+	<% @articles.each do |article| %>
+		<%= render 'shared/article',  article: article %>
+	<% end %>

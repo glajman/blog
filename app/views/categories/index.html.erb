@@ -1,0 +1,10 @@
+<h1>All Categories</h1>
+
+<p><strong>Categories</strong></p>
+
+<% @category.each do |categories| %>
+	<p><%= link_to categories.name, categories%><p>
+<%end%>
+
+<%= link_to "New category", new_category_path %>
+<%= link_to "Home", articles_path %>

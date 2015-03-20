@@ -1,0 +1,11 @@
+<h2>Category name</h2>
+
+<h3><%= @category.name %></h3>
+
+<% @category.articles.each do |article| %>
+	<%= render 'shared/article', article: article %>
+	<%= link_to 'Back', categories_path %>
+<% end %><br><br><br><br>
+
+<%= link_to 'Delete category', category_path(@category),
+	method: :delete %>

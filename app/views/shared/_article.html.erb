@@ -1,0 +1,16 @@
+<article>
+	<section>
+		<h2><%= article.title %></h2>
+	</section>
+
+	<section>
+		<h3><%= article.category.name %></h3>
+	</section>
+
+	<section>
+		<p><%= article.text %></p>
+		<%= link_to 'Delete', article_path(article),
+			method: :delete,
+			date: { confirm: 'Are you sure?' } %>
+	</section>
+</article>
