@@ -9,8 +9,10 @@
 
 	<section>
 		<p><%= article.text %></p>
-		<%= link_to 'Delete', article_path(article),
-			method: :delete,
-			date: { confirm: 'Are you sure?' } %>
+			<% if logged_in? %>
+				<%= link_to 'Delete', article_path(article),
+					method: :delete,
+					date: { confirm: 'Are you sure?' } %>
+			<% end %>
 	</section>
 </article>
