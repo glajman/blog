@@ -15,10 +15,18 @@ class UsersController < ApplicationController
 		@user = User.new(user_params)
 
 		if @user.save
+			log_in @user
 			redirect_to @user
 		else
 			render 'new'
 		end
+	end
+
+	def destroy
+		@user = User.find(params[:id])
+		@user.destroy
+
+		redirect_to users_path
 	end
 
 	private

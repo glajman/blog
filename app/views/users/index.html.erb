@@ -1,3 +1,4 @@
 <% @user.each do |users| %>
 	<p><%= users.name %><p>
+	<%= link_to 'Delete user', user_path(users), method: 'delete' %>
 <%end%>
