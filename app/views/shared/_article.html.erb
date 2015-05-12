@@ -8,11 +8,12 @@
 	</section>
 
 	<section>
-		<p><%= article.text %></p>
-			<% if logged_in? %>
+		<p><%= article.text.to_s %></p>
+			<% if logged_in? && current_user.admin? && !current_user?(@user) %>
 				<%= link_to 'Delete', article_path(article),
 					method: :delete,
 					date: { confirm: 'Are you sure?' } %>
+			<% else %>
 			<% end %>
 	</section>
 </article>
