@@ -13,7 +13,9 @@
 	</ul>
 </div>
 <div class="row">
-	<% @articles.each do |article| %>
-		<%= render 'shared/article',  article: article %>
-	<% end %>
+	<div class="large-6 columns">
+		<% @articles.each do |article| %>
+			<%= render 'shared/article',  article: article %>
+		<% end %>
+	</div>
 </div>
