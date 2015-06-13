@@ -1,3 +1,19 @@
-body.test {
+section.test {
 	color: #D44242;
+}
+
+.title {
+	text-align: center;
+}
+
+p.text-box {
+	height: 200px;
+}
+
+.text-field {
+	float: right;
+}
+
+.right {
+	list-style: none;
 }

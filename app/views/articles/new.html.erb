@@ -1,20 +1,29 @@
-<%= form_for :article, url: articles_path do |f| %>
-	<h1>
-		<%= f.label :title%><br>
-		<%= f.text_field :title %>
-	</h1>
+
+<div class="title">
+	<h1>New article</h1>
+</div>
+
+<div class="row">
+	<div class="large-10 large-centered columns">
+		<%= form_for :article, url: articles_path do |f| %>
+			<p>
+				<%= f.label :title%><br>
+				<%= f.text_field :title, size: "80x1" %>
+			</p>
 
 
-	<%= f.select :category_id, options_for_select(Category.all.map { |category| [category.name, category.id]}) %>
+			<div class="small-4"><%= f.select :category_id, options_for_select(Category.all.map { |category| [category.name, category.id]}) %></div>
 
-	<p>
-		<%= f.label :text %><br>
-		<%= f.text_area :text %>
-	</p>
+			<p class="text-box">
+				<%= f.label :text %><br>
+				<%= f.text_area :text, size: "80x6" %>
+			</p>
 
-	<p>
-		<%= f.submit %>
-	</p>
+			<p>
+				<%= f.submit %>
+			</p>
 
-	<%= link_to 'Back', articles_path %>
+			<%= link_to 'Back', articles_path %>
+		</div>
+	</div>
 <% end %>

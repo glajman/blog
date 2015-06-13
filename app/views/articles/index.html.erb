@@ -1,6 +1,5 @@
-
 <div class="row">
-	<ul class="inline-list right">
+	<ul class="right">
 		<% if logged_in? %>
 			<li><%= link_to "log out", logout_path, method: "delete" %></li>
 			<li><%= link_to current_user.name, user_path(current_user) %></li>
@@ -13,9 +12,9 @@
 	</ul>
 </div>
 <div class="row">
-	<div class="large-6 columns">
+	<div class="large-6 large-centered columns">
 		<% @articles.each do |article| %>
-			<%= render 'shared/article',  article: article %>
+			<%= render 'shared/truncated_article', article: article %>
 		<% end %>
 	</div>
 </div>

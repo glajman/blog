@@ -1,6 +1,6 @@
 <article class="row">
 	<section class="title">
-		<h2><%= article.title %></h2>
+		<h2 class="article"><%= link_to article.title, article %></h2>
 	</section>
 
 	<section class="title">
@@ -8,7 +8,7 @@
 	</section>
 
 	<section class="test">
-		<%= simple_format article.text%>
+		<%= truncate(article.text, length: 500, separator: ".")%>
 			<% if logged_in? && current_user.admin? && !current_user?(@user) %>
 				<%= link_to 'Delete', article_path(article),
 					method: :delete,
