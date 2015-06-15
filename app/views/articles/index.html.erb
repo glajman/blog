@@ -1,16 +1,22 @@
+
 <div class="row">
-	<ul class="right">
-		<% if logged_in? %>
-			<li><%= link_to "log out", logout_path, method: "delete" %></li>
-			<li><%= link_to current_user.name, user_path(current_user) %></li>
-			<li><%= link_to 'New article', new_article_path %></li>
-			<li><%= link_to 'New category', new_category_path %></li>
-		<% else %>
-			<li><%= link_to 'log in', login_path %></li>
-			<li><%= link_to 'Sign up', new_user_path %></li>
-		<% end %>
-	</ul>
+	<div class="large-12 columns">
+		<div class="nav-bar right">
+			<ul class="button-group">
+				<% if logged_in? %>
+					<li><%= link_to "log out", logout_path, method: "delete" %></li>
+					<li><%= link_to current_user.name, user_path(current_user) %></li>
+					<li><%= link_to 'New article', new_article_path %></li>
+					<li><%= link_to 'New category', new_category_path %></li>
+				<% else %>
+					<li><%= link_to 'log in', login_path %></li>
+					<li><%= link_to 'Sign up', new_user_path %></li>
+				<% end %>
+            </ul>
+        </div>
+    </div>
 </div>
+
 <div class="row">
 	<div class="large-6 large-centered columns">
 		<% @articles.each do |article| %>
@@ -18,3 +24,15 @@
 		<% end %>
 	</div>
 </div>
+
+<footer class="row">
+	<div class="large-12 columns">
+		<hr/>
+			<div class="row">
+				<div class="large-6 columns">
+              		<p>© All rights reserved.</p>
+            	</div>
+            </div>
+        </div>
+    </div>
+</footer>
